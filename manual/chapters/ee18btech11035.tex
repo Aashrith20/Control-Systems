@@ -34,100 +34,33 @@ Calculating poles :
     s&=-1\pm\sqrt{1-k}
 \end{align}
 
-Over Damped System:\\
-For the closed loop transfer function \eqref{eq:ee18btech11035_H(s)} to be Over damped system,poles should be Real and Distinct.\\
-As poles are Real and Distinct $k$ should be less than 1\\
-Considering k=0.5\\
-\begin{align}
-H\brak{s} &= \frac{0.5}{s^2+2s+0.5}
-\end{align}
-after substituting from \eqref{eq:ee18btech11035_H(s)}.
-From \eqref{ee18btech11035_poles}
-\begin{align}
-s&=-1\pm\sqrt{0.5}
-\end{align}
-Poles are at \(-1+\frac{1}{\sqrt{2}} ,-1-\frac{1}{\sqrt{2}}\)\\
-Calculating Step response
+Calculating step response for a general damping system \eqref{eq:ee18btech11035_H(s)} :\\
 \begin{align}
 X\brak{s}&=\frac{1}{s}\\
 Y\brak{s}&=H\brak{s}X\brak{s}\\
-&=\frac{0.5}{s^2+2s+0.5}\frac{1}{s}
+&=\frac{k}{s^2+2s+k}\frac{1}{s}
 \end{align}
 \begin{multline}
-    y\brak{t}&=\brak{{1-e^{-t}\cosh{\brak{\frac{t}{\sqrt{2}}}}-\sqrt{2}e^{-t}\sinh{\brak{\frac{t}{\sqrt{2}}}}}}u\brak{t}
+    y\brak{t}&=u\brak{t}+\frac{k}{\brak{2\sqrt{1-k}}\brak{-1+\sqrt{1-k}}}e^{\brak{-1+\sqrt{1-k}}t}u\brak{t}\\
+    +\frac{k}{\brak{2\sqrt{1-k}}\brak{1+\sqrt{1-k}}}e^{\brak{-1-\sqrt{1-k}}t}u\brak{t}
 \end{multline}
-    
-Under Damped System:\\
-For the closed loop transfer function \eqref{eq:ee18btech11035_H(s)} to be Under damped system,poles should be Complex and Conjugate.\\
-As poles are Complex and Conjugate $k$ should be greater than 1\\
-Considering k=2\\
-\begin{align}
-H\brak{s} &= \frac{2}{s^2+2s+2}
-\end{align}
-after substituting from \eqref{eq:ee18btech11035_H(s)}.
-From \eqref{ee18btech11035_poles}
-\begin{align}
-s&=-1\pm\iota
-\end{align}
-Poles are at -1+\(\iota\),-1-\(\iota\)\\
-Calculating Step response
-\begin{align}
-X\brak{s}&=\frac{1}{s}\\
-Y\brak{s}&=H\brak{s}X\brak{s}\\
-&=\frac{2}{s^2+2s+2}\frac{1}{s}\\
-y\brak{t}&=\brak{1-e^{-t}\cos{t}-e^{-t}\sin{t}}u\brak{t}
-\end{align}
 
+Over Damped System:\\
+For the closed loop transfer function \eqref{eq:ee18btech11035_H(s)} to be Over damped system,poles should be Real and Distinct,this happens when $k$ is less than 1.\\
+
+Under Damped System:\\
+For the closed loop transfer function \eqref{eq:ee18btech11035_H(s)} to be Under damped system,poles should be Complex and Conjugate,this happens when $k$ is greater than 1.\\
 
 Critical Damped System:\\
-For the closed loop transfer function \eqref{eq:ee18btech11035_H(s)} to be Critical damped system,poles should be Real at same location.\\
-As poles are Real and equal $k$ should be 1\\
+For the closed loop transfer function \eqref{eq:ee18btech11035_H(s)} to be Critical damped system,poles should be Real at same location,this happens when $k$ is 1.\\
+
+\item  Find steady state response using the final value theorem.\\
+\solution 
 \begin{align}
-H\brak{s} &= \frac{1}{s^2+2s+1}
-\end{align}
-after substituting from \eqref{eq:ee18btech11035_H(s)}.
-From \eqref{ee18btech11035_poles}
-\begin{align}
-s&=-1
-\end{align}
-Pole is at -1 and it is a second order pole.\\
-Calculating Step response
-\begin{align}
-X\brak{s}&=\frac{1}{s}\\
-Y\brak{s}&=H\brak{s}X\brak{s}\\
-&=\frac{1}{s^2+2s+1}\frac{1}{s}\\
-y\brak{t}&=\brak{1-e^{-t}-te^{-t}}u\brak{t}
+\lim_{t\to\infty} y(t)&=\lim_{s\to0} sY(s)\\
+&=\lim_{s\to0} s\frac{k}{s^2+2s+k}\frac{1}{s}\\
+&=\lim_{s\to0} \frac{k}{s^2+2s+k}\\
+&=\frac{k}{k}=1
 \end{align}
 
-\item  Find $k$ in  such that the step response of the closed-loop system has minimum settling time and have no overshoot.\\
-\solution Settling time is defined as the time required for the transient's damped oscillations to
-reach and stay within $\pm 2$\% of the steady-state value.\\
-\begin{figure}[!h]
-\includegraphics[width=\columnwidth]{./figures/ee18btech11035_4.eps}
-\caption{Plot of step response of systems}
-\label{fig:ee18btech11035_y(t)}
-\end{figure}
-
-Python Code for above plot is:
-\begin{lstlisting}
-codes/ee18btech11035_4.py
-\end{lstlisting}
-Above plot justifies that critical damped system \brak{k=1} has minimum settling time and also doesn't overshoot.\\
-Calculating Settling time\\
-\begin{align}
-    \label{eq:calculating_time}
-    1-e^{-t}-te^{-t}&=0.98
-\end{align}
-Solving \eqref{eq:calculating_time} graphically\\
-\begin{figure}[!h]
-\includegraphics[width=\columnwidth]{./figures/ee18btech11035_5.eps}
-\caption{}
-\label{fig:ee18btech11035_settling}
-\end{figure}
-
-Python Code for above plot is:
-\begin{lstlisting}
-codes/ee18btech11035_5.py
-\end{lstlisting}
-Therefore,Settling time is 5.834sec.
 \end{enumerate}

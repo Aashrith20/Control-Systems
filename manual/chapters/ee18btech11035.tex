@@ -42,8 +42,12 @@ Y\brak{s}&=H\brak{s}X\brak{s}\\
 \end{align}
 \begin{multline}
     y\brak{t}&=u\brak{t}+\frac{k}{\brak{2\sqrt{1-k}}\brak{-1+\sqrt{1-k}}}e^{\brak{-1+\sqrt{1-k}}t}u\brak{t}\\
-    +\frac{k}{\brak{2\sqrt{1-k}}\brak{1+\sqrt{1-k}}}e^{\brak{-1-\sqrt{1-k}}t}u\brak{t}
+    +\frac{k}{\brak{2\sqrt{1-k}}\brak{1+\sqrt{1-k}}}e^{\brak{-1-\sqrt{1-k}}t}u\brak{t} \sbrak{\text{when }k\ne1}
 \end{multline}
+\begin{align}
+y\brak{t}&=\brak{1-e^{-t}-te^{-t}}u\brak{t} \sbrak{\text{when }k=1}
+\end{align}
+
 
 Over Damped System:\\
 For the closed loop transfer function \eqref{eq:ee18btech11035_H(s)} to be Over damped system,poles should be Real and Distinct,this happens when $k$ is less than 1.\\

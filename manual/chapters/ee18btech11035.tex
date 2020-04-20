@@ -41,6 +41,7 @@ Y\brak{s}&=H\brak{s}X\brak{s}\\
 &=\frac{k}{s^2+2s+k}\frac{1}{s}
 \end{align}
 \begin{multline}
+\label{eq:y(t)}
     y\brak{t}&=u\brak{t}+\frac{k}{\brak{2\sqrt{1-k}}\brak{-1+\sqrt{1-k}}}e^{\brak{-1+\sqrt{1-k}}t}u\brak{t}\\
     +\frac{k}{\brak{2\sqrt{1-k}}\brak{1+\sqrt{1-k}}}e^{\brak{-1-\sqrt{1-k}}t}u\brak{t} \sbrak{\text{when }k\ne1}
 \end{multline}
@@ -51,12 +52,25 @@ y\brak{t}&=\brak{1-e^{-t}-te^{-t}}u\brak{t} \sbrak{\text{when }k=1}
 
 Over Damped System:\\
 For the closed loop transfer function \eqref{eq:ee18btech11035_H(s)} to be Over damped system,poles should be Real and Distinct,this happens when $k$ is less than 1.\\
-
+Considering \(k<1\) and solving \eqref{eq:y(t)}\\
+\begin{align}
+y\brak{t}&=\sbrak{1-e^{-t}\brak{\frac{\sinh{\brak{\sqrt{1-k}}t}}{\sqrt{1-k}}+\cosh{\brak{\sqrt{1-k}}t}}}u\brak{t}
+\end{align}
 Under Damped System:\\
 For the closed loop transfer function \eqref{eq:ee18btech11035_H(s)} to be Under damped system,poles should be Complex and Conjugate,this happens when $k$ is greater than 1.\\
+Considering \(k>1\) and solving \eqref{eq:y(t)}\\
+\begin{align}
+    y\brak{t}&=\sbrak{1-e^{-t}\brak{\frac{\sin{\brak{\sqrt{k-1}}t}}{\sqrt{k-1}}+\cos{\brak{\sqrt{k-1}}t}}}u\brak{t}
+\end{align}
+
 
 Critical Damped System:\\
 For the closed loop transfer function \eqref{eq:ee18btech11035_H(s)} to be Critical damped system,poles should be Real at same location,this happens when $k$ is 1.\\
+\begin{align}
+y\brak{t}&=\brak{1-e^{-t}-te^{-t}}u\brak{t}    
+\end{align}
+
+
 
 \item  Find steady state response using the final value theorem.\\
 \solution 

@@ -63,4 +63,20 @@ For the closed loop transfer function \eqref{eq:ee18btech11035_H(s)} to be Criti
 &=\frac{k}{k}=1
 \end{align}
 
+\item  Find the settling time in terms of 'k' .\\
+\solution 
+\begin{align}
+0.98<y\brak{t}<1.02    
+\end{align}
+\begin{multline}
+\label{eq:time}
+    0.98<u\brak{t}+\frac{k}{\brak{2\sqrt{1-k}}\brak{-1+\sqrt{1-k}}}e^{\brak{-1+\sqrt{1-k}}t}u\brak{t}\\
+    +\frac{k}{\brak{2\sqrt{1-k}}\brak{1+\sqrt{1-k}}}e^{\brak{-1-\sqrt{1-k}}t}u\brak{t}<1.02
+\end{multline}
+On further simplifying \eqref{eq:time}
+\begin{multline}
+  -0.02<\frac{-1}{\sqrt{1-k}}e^{-t}\sbrak{\sinh{\brak{\sqrt{1-k}}t}+\\
+  \sqrt{1-k}\cosh{\brak{\sqrt{1-k}}t}}<0.02   
+\end{multline}
+
 \end{enumerate}

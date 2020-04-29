@@ -19,8 +19,8 @@ plt.annotate("A(-1.1432,0)",(-1.1432,0))
 plt.annotate("B(1.1432,0)",(1.1432,0))
 plt.legend()
 #if using termux
-#plt.savefig('./figs/ee18btech11035.pdf')
-#plt.savefig('./figs/ee18btech11035.eps')
-#subprocess.run(shlex.split("termux-open ./figs/ee18btech11035.pdf"))
+plt.savefig('./figs/ee18btech11035.pdf')
+plt.savefig('./figs/ee18btech11035.eps')
+subprocess.run(shlex.split("termux-open ./figs/ee18btech11035.pdf"))
 #else
-plt.show()
+#plt.show()

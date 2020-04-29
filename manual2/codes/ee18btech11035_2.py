@@ -40,8 +40,8 @@ plt.annotate("-1+0j",(-1,0))
 plt.xlabel('Re(s)')
 plt.ylabel('Im(s)')
 #if using termux
-#plt.savefig('./figs/ee18btech11035/ee18btech11035_1.pdf')
-#plt.savefig('./figs/ee18btech11035/ee18btech11035_1.eps')
-#subprocess.run(shlex.split("termux-open ./figs/ee18btech11035/ee18btech11035_1.pdf"))
+plt.savefig('./figs/ee18btech11035/ee18btech11035_1.pdf')
+plt.savefig('./figs/ee18btech11035/ee18btech11035_1.eps')
+subprocess.run(shlex.split("termux-open ./figs/ee18btech11035/ee18btech11035_1.pdf"))
 #else
-plt.show()
+#plt.show()

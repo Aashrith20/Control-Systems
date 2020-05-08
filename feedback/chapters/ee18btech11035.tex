@@ -4,7 +4,7 @@
 \item A dc amplifier having a single-pole response with pole frequency 10Hz and unity-gain frequency of 1MHz is operated in a loop whose frequency-independent feedback factor is 0.01. Find the low-frequency gain, the 3-dB frequency, and the unity-gain frequency of the closed-loop amplifier. By what factor does the pole shift?\\
 \solution The open-loop gain of the amplifier is\\
 \begin{align}
-    A\brak{s}=\frac{A_{O}}{1+\frac{s}{\omega_p}}=\frac{A_{O}}{1+\frac{s}{2\pi.10}}
+    G\brak{s}=\frac{A_{O}}{1+\frac{s}{\omega_p}}=\frac{A_{O}}{1+\frac{s}{2\pi.10}}
 \end{align}
 Given that unity gain frequency is 1MHz\\
 Replacing $s$ with $\j\omega$ in this equation.
@@ -21,30 +21,30 @@ Block diagram for amplifier is
 \caption{}
 \label{fig:ee18btech11035_block}
 \end{figure}\\
-Where A\brak{s}=$\frac{10^5}{1+\frac{s}{10}}$
+Where G\brak{s}=$\frac{10^5}{1+\frac{s}{10}}$
 
 \item Find the low frequency gain of the closed-loop amplifier.\\ 
 \solution Given that frequency-independent feedback factor of amplifier is 0.01\\
 \begin{align}
-    \beta=0.01
+    H\brak{s}=0.01
 \end{align}
 Closed loop gain of amplifier is given by
 \begin{align}
     \label{eq:ee18btech11035_T}
-    T\brak{s}=\frac{A\brak{s}}{1+A\brak{s}\beta}
+    T\brak{s}=\frac{G\brak{s}}{1+G\brak{s}H\brak{s}}
 \end{align}
 As frequency is low,substituting $s=0$\\
 \begin{align}
-    T\brak{0}&=\frac{A\brak{0}}{1+A\brak{0}\beta}\\
+    T\brak{0}&=\frac{G\brak{0}}{1+G\brak{0}H\brak{0}}\\
     &=\frac{10^5}{1+10^5.\brak{0.01}}\\
     &=99.900
 \end{align}
 
 \item Find the 3-dB frequency of the closed loop amplifier\\
-\solution Substituting A\brak{s} and $\beta$ in \eqref{eq:ee18btech11035_T}
+\solution Substituting G\brak{s} and H\brak{s} in \eqref{eq:ee18btech11035_T}
 \begin{align}
-    T&=\frac{\frac{A_{O}}{1+A_{0}\beta}}{1+\frac{s}{20\pi\brak{1+A_{O}\beta}}}\\
-    \text{3-dB frequency}&=\omega\brak{1+A_{O}\beta}\\
+    T&=\frac{\frac{A_{O}}{1+A_{0}H\brak{s}}}{1+\frac{s}{20\pi\brak{1+A_{O}H\brak{s}}}}\\
+    \text{3-dB frequency}&=\omega\brak{1+A_{O}H\brak{s}}\\
     &=20\pi.\brak{1+10^5.\brak{0.01}}\\
     &=62862.8rad/s=10.01kHz
 \end{align}
@@ -53,14 +53,14 @@ As frequency is low,substituting $s=0$\\
 \solution Unity-gain frequency of the closed loop amplifier is obtained as follows
 \begin{align}
     \abs{T}&=1\\
-    \frac{A_{O}}{1+A_{O}\beta}&=\abs{1+\frac{\j\omega}{20\pi\brak{1+A_{O}\beta}}}\\
+    \frac{A_{O}}{1+A_{O}H\brak{s}}&=\abs{1+\frac{\j\omega}{20\pi\brak{1+A_{O}H\brak{s}}}}\\
     99.900&=\abs{1+\frac{\j\omega}{62862.8}}\\
     \omega&=6279.649Krad/s=999.94kHz
 \end{align}
 \item By what factor does the pole shift?\\
-\solution Open-loop pole is $\omega$ and the Closed-loop pole is $\omega\brak{1+A_{O}\beta}$\\
+\solution Open-loop pole is $\omega$ and the Closed-loop pole is $\omega\brak{1+A_{O}H\brak{s}}$\\
 \begin{align}
-    \text{Pole-shift Factor}&=\frac{\omega\brak{1+A_{O}\beta}}{\omega}\\
+    \text{Pole-shift Factor}&=\frac{\omega\brak{1+A_{O}H\brak{s}}}{\omega}\\
     &=1+A_{O}\beta=1001
 \end{align}
 

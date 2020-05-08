@@ -13,7 +13,7 @@ Replacing $s$ with $\j\omega$ in this equation.
     \abs{A_{O}}&=\abs{1+\frac{2\pi.10^6}{2\pi.10}}\\
     A_{O}&\approx10^5
 \end{align}
-Block diagram for amplifier is
+Block diagram representation of the amplifier
 \begin{figure}[!ht]
     \begin{center}
 		\resizebox{\columnwidth}{!}{\input{./figs/ee18btech11035_block.tex}}
@@ -44,7 +44,7 @@ As frequency is low,substituting $s=0$\\
 \solution Substituting G\brak{s} and H\brak{s} in \eqref{eq:ee18btech11035_T}
 \begin{align}
     T&=\frac{\frac{A_{O}}{1+A_{0}H\brak{s}}}{1+\frac{s}{20\pi\brak{1+A_{O}H\brak{s}}}}\\
-    \text{3-dB frequency}&=\omega\brak{1+A_{O}H\brak{s}}\\
+    \text{3-dB frequency}&=20\pi.\brak{1+A_{O}H\brak{s}}\\
     &=20\pi.\brak{1+10^5.\brak{0.01}}\\
     &=62862.8rad/s=10.01kHz
 \end{align}
@@ -58,10 +58,10 @@ As frequency is low,substituting $s=0$\\
     \omega&=6279.649Krad/s=999.94kHz
 \end{align}
 \item By what factor does the pole shift?\\
-\solution Open-loop pole is $\omega$ and the Closed-loop pole is $\omega\brak{1+A_{O}H\brak{s}}$\\
+\solution Open-loop pole is 10Hz and the Closed-loop pole is $20\pi.\brak{1+A_{O}H\brak{s}}$\\
 \begin{align}
-    \text{Pole-shift Factor}&=\frac{\omega\brak{1+A_{O}H\brak{s}}}{\omega}\\
-    &=1+A_{O}\beta=1001
+    \text{Pole-shift Factor}&=\frac{20\pi\brak{1+A_{O}H\brak{s}}}{20\pi}\\
+    &=1+A_{O}H\brak{s}=1001
 \end{align}
 
 

@@ -12,15 +12,15 @@
 \begin{tikzpicture}[node distance=2.5cm,auto,>=latex']
   \node [input, name=input] {};
   \node [sum, right of=input] (sum) {};
-  \node [block, right of = sum] (block1) {$A\brak{s}$};
-  \node [block, below of= block1] (block2) {$\beta$};
+  \node [block, right of = sum] (block1) {$G\brak{s}$};
+  \node [block, below of= block1] (block2) {$H\brak{s}$};
   \node [output, right of= block1] (output) {};
   
   
   
-  \draw [->] (input) -- node {$r$} (sum);
+  \draw [->] (input) -- node {$V_{in}$} (sum);
   \draw [->] (sum) -- node {} (block1);
-  \draw [->] (block1) -- node [name =y] {$y$} (output);
+  \draw [->] (block1) -- node [name =y] {$V_{out}$} (output);
   \draw [->] (y) |- node {} (block2);
   \draw [->] (block2) -| node [pos=0.99] {$-$} (sum);
 \end{tikzpicture}

@@ -5,7 +5,7 @@ PROCEDURE FOR RUNNING SPICE SIMULATONS
 3) The above command generates a "ee18btech11035_spice1.dat"
 4) To get Magnitude vs time Plot run "ee18btech11035_spice1.py"
 5) Before running above python make sure .dat and .py are in same directory
-6) The file "ee18btech11035_spice2.net" is netlist circuit for Open-loop System.
+6) The file "ee18btech11035_spice2.net" is netlist circuit for Closed-loop System.
 7) Run the command "ngspice ee18btech11035_spice2.net" in the terminal.This command generates a "ee18btech11035_spice2.dat"
 8) The above command generates a "ee18btech11035_spice2.dat"
 9) To get Magnitude vs time Plot run "ee18btech11035_spice2.py"

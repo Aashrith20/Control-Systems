@@ -32,7 +32,7 @@ codes/ee18btech11035_bode1.py
 
 \begin{figure}[!ht]
     \begin{center}
-		\resizebox{\columnwidth}{!}{\input{./figs/ee18btech11035_G.tex}}
+		\resizebox{0.95\columnwidth}{!}{\input{./figs/ee18btech11035_G.tex}}
 	\end{center}
 \caption{}
 \label{fig:ee18btech11035_G}
@@ -41,7 +41,10 @@ codes/ee18btech11035_bode1.py
 
 
 \item Verify the gain using spice\\
-\solution Netlist file for simulation:
+\solution Follow the Instructions for SPICE simulation:
+\begin{lstlisting}
+spice/README.md
+\end{lstlisting}Netlist file for simulation:
 \begin{lstlisting}
 spice/ee18btech11035_spice1.net
 \end{lstlisting}
@@ -230,7 +233,7 @@ Observing the fig:\eqref{fig:ee18btech11035_bode1} and fig:\eqref{fig:ee18btech1
 \label{table:ee18btech11035_table2}
 \end{table}
 
-Therefore,By using feedback we can get desired Gain of an amplifier while maintaining constant Gain Bandwidth product(Only for a first-order op-amp).
+Therefore,By using feedback we can get desired Gain of an amplifier while maintaining constant Gain Bandwidth product(for a first-order op-amp).
 
 
 \end{enumerate}
